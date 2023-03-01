@@ -76,6 +76,8 @@ module CORDIC_DP(
             y_regb <= y_rega - (x_rega >> counter);
             theta_regb <= theta_rega + ROM_VALUE;
         end
+
+        counter <= next_counter;
     end
 
     assign out_port0 = (cordic_mode == 1'b0) ? x_regb : theta_regb;
