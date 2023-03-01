@@ -2,6 +2,8 @@ module CORDIC_DP(
     input wire clka,
     input wire clkb,
 
+    input wire reset,
+
     input wire cordic_mode,
 
     input wire [7:0] in_port0,
@@ -42,27 +44,41 @@ module CORDIC_DP(
     end
 
     always @(negedge clka) begin
-        if (in_mux_ctl == 2'b00) begin
-            x_rega <= 8'b0; // scale
+        if (reset) begin
+            x_rega <= 8'b0;
             y_rega <= 8'b0;
-            theta_rega <= in_port0;
+            theta_rega <= 8'b0;
+            x_regb <= 8'b0;
+            y_regb <= 8'b0;
+            theta_regb <= 8'b0;
+            counter <= 4'b0;
+            next_counter <= 4'b0;
         end
-        if (in_mux_ctl == 2'b01) begin
-            x_rega <= x_regb;
-            y_rega <= y_regb;
-            theta_rega <= theta_regb;
-        end
-        if (in_mux_ctl == 2'b10) begin
-            x_rega <= in_port0;
-            y_rega <= in_port1;
-            theta_rega <= theta_regb;
-        end
+        else begin
 
-        case ({counter_rst, counter_hold})
-            2'b01: counter <= next_counter;
-            2'b10: counter = 4'b0;
-            default: counter <= next_counter + 1;
-        endcase
+            if (in_mux_ctl == 2'b00) begin
+                x_rega <= 8'b0; // scale
+                y_rega <= 8'b0;
+                theta_rega <= in_port0;
+            end
+            if (in_mux_ctl == 2'b01) begin
+                x_rega <= x_regb;
+                y_rega <= y_regb;
+                theta_rega <= theta_regb;
+            end
+            if (in_mux_ctl == 2'b10) begin
+                x_rega <= in_port0;
+                y_rega <= in_port1;
+                theta_rega <= theta_regb;
+            end
+
+            case ({counter_rst, counter_hold})
+                2'b01: counter <= next_counter;
+                2'b10: counter = 4'b0;
+                default: counter <= next_counter + 1;
+            endcase
+
+        end
     end
 
     always @(negedge clkb) begin
