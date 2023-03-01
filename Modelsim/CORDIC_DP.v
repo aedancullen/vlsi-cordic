@@ -29,15 +29,15 @@ module CORDIC_DP(
 
     always @(*) begin
         case (counter)
-            4'd0: ROM_VALUE = 8'b0;
-            4'd1: ROM_VALUE = 8'b0;
-            4'd2: ROM_VALUE = 8'b0;
-            4'd3: ROM_VALUE = 8'b0;
-            4'd4: ROM_VALUE = 8'b0;
-            4'd5: ROM_VALUE = 8'b0;
-            4'd6: ROM_VALUE = 8'b0;
-            4'd7: ROM_VALUE = 8'b0;
-            default: ROM_VALUE = 8'b0;
+            4'd0: ROM_VALUE = 8'd0;
+            4'd1: ROM_VALUE = 8'd0;
+            4'd2: ROM_VALUE = 8'd0;
+            4'd3: ROM_VALUE = 8'd0;
+            4'd4: ROM_VALUE = 8'd0;
+            4'd5: ROM_VALUE = 8'd0;
+            4'd6: ROM_VALUE = 8'd0;
+            4'd7: ROM_VALUE = 8'd0;
+            default: ROM_VALUE = 8'd0;
         endcase
     end
 
@@ -59,9 +59,9 @@ module CORDIC_DP(
         end
 
         case ({counter_rst, counter_hold})
-            2'b01: next_counter <= counter;
-            2'b10: next_counter = 4'b0;
-            default: next_counter <= counter + 1;
+            2'b01: counter <= next_counter;
+            2'b10: counter = 4'b0;
+            default: counter <= next_counter + 1;
         endcase
     end
 
@@ -77,7 +77,7 @@ module CORDIC_DP(
             theta_regb <= theta_rega + ROM_VALUE;
         end
 
-        counter <= next_counter;
+        next_counter <= counter;
     end
 
     assign out_port0 = (cordic_mode == 1'b0) ? x_regb : theta_regb;

@@ -14,11 +14,12 @@ module CORDIC_TOP(
     output wire done
     );
 
-    wire [7:0] counter;
-    wire [3:0] state;
+    wire [3:0] counter;
     wire [1:0] in_mux_ctl;
     wire counter_rst;
     wire counter_hold;
+
+    assign done = counter_hold;
 
     CORDIC_FSM fsm(
         .clka(clka),
@@ -27,7 +28,7 @@ module CORDIC_TOP(
         .start(start),
         .cordic_mode(cordic_mode),
         .counter(counter),
-        .state(state),
+        .state(),
         .in_mux_ctl(in_mux_ctl),
         .counter_rst(counter_rst),
         .counter_hold(counter_hold)
