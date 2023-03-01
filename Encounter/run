@@ -1,0 +1,2 @@
+encounter -64 -init encounter.tcl -log encounter.log -overwrite
+
