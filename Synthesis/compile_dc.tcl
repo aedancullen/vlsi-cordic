@@ -12,10 +12,10 @@
 #/* Edit this part only of the file.                                     */
 #/* Add all verilog files, separated by spaces after keyword "list"      */
 
-set my_verilog_files [list CORDIC_FSM.v]
+set my_verilog_files [list CORDIC_TOP.v CORDIC_DP.v CORDIC_FSM.v]
 
 #/* Top-level Module Name update                            */
-set my_toplevel CORDIC_FSM
+set my_toplevel CORDIC_TOP
 
 #/* The name of the clock pin. If no clock-pin     */
 #/* exists, pick anything                          */

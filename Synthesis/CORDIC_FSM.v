@@ -60,7 +60,7 @@ function [SIZE-1:0] fsm_function;
 endfunction
 
 //----------Seq Logic-----------------------------
-always @ (posedge clka)
+always @ (negedge clka)
 begin : FSM_SEQ
   if (reset) begin
     next_state <= IDLE;
@@ -70,7 +70,7 @@ begin : FSM_SEQ
 end
 
 //----------Output Logic——————————————
-always @ (posedge clkb)
+always @ (negedge clkb)
 begin : OUTPUT_LOGIC
   case(next_state)
     IDLE: begin
