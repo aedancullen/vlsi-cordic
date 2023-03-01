@@ -37,6 +37,7 @@ module CORDIC_TOP(
     CORDIC_DP dp(
         .clka(clka),
         .clkb(clkb),
+        .reset(reset),
         .cordic_mode(cordic_mode),
         .in_port0(in_port0),
         .in_port1(in_port1),

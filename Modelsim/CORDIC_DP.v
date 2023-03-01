@@ -31,14 +31,14 @@ module CORDIC_DP(
 
     always @(*) begin
         case (counter)
-            4'd0: ROM_VALUE = 8'd0;
-            4'd1: ROM_VALUE = 8'd0;
-            4'd2: ROM_VALUE = 8'd0;
-            4'd3: ROM_VALUE = 8'd0;
-            4'd4: ROM_VALUE = 8'd0;
-            4'd5: ROM_VALUE = 8'd0;
-            4'd6: ROM_VALUE = 8'd0;
-            4'd7: ROM_VALUE = 8'd0;
+            4'd0: ROM_VALUE = 8'd5;
+            4'd1: ROM_VALUE = 8'd1;
+            4'd2: ROM_VALUE = 8'd2;
+            4'd3: ROM_VALUE = 8'd3;
+            4'd4: ROM_VALUE = 8'd4;
+            4'd5: ROM_VALUE = 8'd5;
+            4'd6: ROM_VALUE = 8'd6;
+            4'd7: ROM_VALUE = 8'd7;
             default: ROM_VALUE = 8'd0;
         endcase
     end
@@ -51,14 +51,14 @@ module CORDIC_DP(
             x_regb <= 8'b0;
             y_regb <= 8'b0;
             theta_regb <= 8'b0;
-            counter <= 4'b0;
-            next_counter <= 4'b0;
+            counter <= 4'd8;
+            next_counter <= 4'd8;
         end
         else begin
 
             if (in_mux_ctl == 2'b00) begin
-                x_rega <= 8'b0; // scale
-                y_rega <= 8'b0;
+                x_rega <= 8'd1; // scale
+                y_rega <= 8'd0;
                 theta_rega <= in_port0;
             end
             if (in_mux_ctl == 2'b01) begin
