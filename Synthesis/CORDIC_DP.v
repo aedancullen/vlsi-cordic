@@ -31,22 +31,22 @@ module CORDIC_DP(
 
     always @(*) begin
         case (counter)
-            4'd0: ROM_VALUE = 8'd5;
-            4'd1: ROM_VALUE = 8'd1;
-            4'd2: ROM_VALUE = 8'd2;
-            4'd3: ROM_VALUE = 8'd3;
-            4'd4: ROM_VALUE = 8'd4;
-            4'd5: ROM_VALUE = 8'd5;
-            4'd6: ROM_VALUE = 8'd6;
-            4'd7: ROM_VALUE = 8'd7;
-            default: ROM_VALUE = 8'd0;
+            4'd0: ROM_VALUE = 8'b00110010;
+            4'd1: ROM_VALUE = 8'b00011101;
+            4'd2: ROM_VALUE = 8'b00001111;
+            4'd3: ROM_VALUE = 8'b00000111;
+            4'd4: ROM_VALUE = 8'b00000011;
+            4'd5: ROM_VALUE = 8'b00000001;
+            4'd6: ROM_VALUE = 8'b00000000;
+            4'd7: ROM_VALUE = 8'b00000000;
+            default: ROM_VALUE = 8'b0;
         endcase
     end
 
     always @(negedge clka) begin
         if (in_mux_ctl == 2'b00) begin
-            x_rega <= 8'd1; // scale
-            y_rega <= 8'd0;
+            x_rega <= 8'b00100110; // 0.607252935
+            y_rega <= 8'b0;
             theta_rega <= in_port0;
         end
         if (in_mux_ctl == 2'b01) begin
