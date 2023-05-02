@@ -1,0 +1,10 @@
+magic
+tech scmos
+timestamp 1683038052
+<< metal2 >>
+rect -2 -2 2 2
+<< metal3 >>
+rect -3 -3 3 3
+<< gv2 >>
+rect -1 -1 1 1
+<< end >>
