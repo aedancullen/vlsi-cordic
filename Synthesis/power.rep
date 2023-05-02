@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : CORDIC_TOP
+Version: N-2017.09-SP2
+Date   : Tue May  2 15:58:12 2023
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /clear/apps/osu/soc/synopsys/lib/ami05/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =   3.7967 mW   (84%)
+  Net Switching Power  = 749.0306 uW   (16%)
+                         ---------
+Total Dynamic Power    =   4.5458 mW  (100%)
+
+Cell Leakage Power     =  54.3668 nW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register           2.4347            0.1455            7.6621            2.5802  (  56.76%)
+sequential         0.7068        2.4912e-02            8.6508            0.7317  (  16.10%)
+combinational      0.6552            0.5786           38.0538            1.2339  (  27.14%)
+--------------------------------------------------------------------------------------------------
+Total              3.7967 mW         0.7490 mW        54.3668 nW         4.5458 mW
+1

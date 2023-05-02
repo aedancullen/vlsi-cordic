@@ -1,0 +1,46 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : CORDIC_TOP
+Version: N-2017.09-SP2
+Date   : Tue May  2 15:58:12 2023
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: cordic_mode
+              (input port clocked by clka)
+  Endpoint: fsm/next_state_reg[1]
+            (falling edge-triggered flip-flop clocked by clka)
+  Path Group: clka
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clka (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.00       1.00 f
+  cordic_mode (in)                         0.77       1.77 f
+  fsm/U3/Y (AND2X2)                        0.50       2.27 f
+  fsm/U37/Y (OAI21X1)                      0.14       2.40 r
+  fsm/U33/Y (AOI21X1)                      0.10       2.51 f
+  fsm/next_state_reg[1]/D (DFFNEGX1)       0.00       2.51 f
+  data arrival time                                   2.51
+
+  clock clka (fall edge)                  10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  fsm/next_state_reg[1]/CLK (DFFNEGX1)     0.00      10.00 f
+  library setup time                      -0.37       9.63
+  data required time                                  9.63
+  -----------------------------------------------------------
+  data required time                                  9.63
+  data arrival time                                  -2.51
+  -----------------------------------------------------------
+  slack (MET)                                         7.13
+
+
+1
