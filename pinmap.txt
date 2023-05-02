@@ -1,0 +1,67 @@
+All pin names listed here correspond to those prefixed with "p_" in .sim files and .cmd files.
+Brackets have been replaced by underscores in .sim files and .cmd files.
+
+1	IN	reset
+2	IN	start
+3	IN	in_port1[7]
+4	IN	in_port1[6]
+5	GND
+6	IN	in_port1[5]
+7	IN	in_port1[4]
+8	IN	in_port1[3]
+9	IN	in_port1[2]
+10	IN	in_port1[1]
+11	GND
+12	IN	in_port1[0]
+13	OUT	out_port1[5]
+14	OUT	out_port1[6]
+15	OUT	out_port1[4]
+16	NC
+17	NC
+18	OUT	out_port1[3]
+19	OUT	out_port1[2]
+20	OUT	out_port1[1]
+21	VDD
+22	OUT	out_port1[0]
+23	OUT	out_port0[6]
+24	OUT	out_port0[7]
+25	OUT	out_port0[5]
+26	OUT	out_port0[4]
+27	VDD
+28	OUT	out_port0[2]
+29	OUT	out_port0[3]
+30	OUT	out_port0[1]
+31	NC
+32	NC
+33	NC
+34	NC
+35	NC
+36	NC
+37	GND
+38	NC
+39	NC
+40	NC
+41	NC
+42	NC
+43	GND
+44	NC
+45	NC
+46	OUT	out_port0[0]
+47	OUT	out_port1[7]
+48	OUT	done
+49	NC
+50	NC
+51	VDD
+52	NC
+53	IN	cordic_mode
+54	IN	in_port0[7]
+55	IN	in_port0[6]
+56	IN	in_port0[5]
+57	IN	in_port0[4]
+58	VDD
+59	IN	in_port0[3]
+60	IN	in_port0[2]
+61	IN	in_port0[1]
+62	IN	in_port0[0]
+63	IN	clka
+64	IN	clkb
