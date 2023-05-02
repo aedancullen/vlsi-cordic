@@ -1,0 +1,5 @@
+calculating total metal1 area...
+====================================================
+Total Metal1 Area = 7355102 lambda squared
+given 6800 x 6800 area, total metal1 density = 15.90636 percent
+====================================================

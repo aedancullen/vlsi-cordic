@@ -1,0 +1,5 @@
+calculating total metal2 area...
+====================================================
+Total Metal2 Area = 24707788 lambda squared
+given 6800 x 6800 area, total metal2 density = 53.43380 percent
+====================================================
